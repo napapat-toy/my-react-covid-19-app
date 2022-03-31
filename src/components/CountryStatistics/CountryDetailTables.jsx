@@ -13,28 +13,28 @@ function Country({ countries, handleDelete }) {
 
           <TableHead>
             <TableRow>
-              <TableCell>
+              <TableCell sx={{ minWidth: 140 }}>
                 <Typography variant='h6'>Continent</Typography>
               </TableCell>
-              <TableCell align="left">
+              <TableCell sx={{ minWidth: 210 }}>
                 <Typography variant='h6'>Country</Typography>
               </TableCell>
-              <TableCell align="left">
+              <TableCell sx={{ minWidth: 150 }}>
                 <Typography variant='h6'>Population</Typography>
               </TableCell>
-              <TableCell align="left" sx={{ minWidth: 160 }} >
+              <TableCell sx={{ minWidth: 160 }} >
                 <Typography variant='h6'>Cases</Typography>
               </TableCell>
-              <TableCell align="left" sx={{ minWidth: 140 }}>
+              <TableCell sx={{ minWidth: 140 }}>
                 <Typography variant='h6'>Tests</Typography>
               </TableCell>
-              <TableCell align="left" sx={{ minWidth: 125 }}>
+              <TableCell sx={{ minWidth: 125 }}>
                 <Typography variant='h6'>Deaths</Typography>
               </TableCell>
-              <TableCell align="left" sx={{ minWidth: 120 }}>
+              <TableCell sx={{ minWidth: 120 }}>
                 <Typography variant='h6'>Time</Typography>
               </TableCell>
-              <TableCell align="left">
+              <TableCell align='center'>
                 <Button variant='contained' onClick={() => setRefresh(Math.random())}>Refresh</Button>
               </TableCell>
             </TableRow>

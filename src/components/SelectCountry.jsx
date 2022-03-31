@@ -1,12 +1,13 @@
-import { Button, FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/material'
+import { FormControl, MenuItem, Paper, TextField } from '@mui/material'
 import { useState } from 'react'
 
-function SelectCountry({ countries, country, handleCountry }) {
+function SelectCountry({ countries, handleCountry }) {
 
     const [search, setSearch] = useState('')
     const [filteredSearch, setFilteredSearch] = useState([])
 
     const handleSearch = (e) => {
+
         if (!e.target.value) {
             setFilteredSearch([])
         }
@@ -28,7 +29,7 @@ function SelectCountry({ countries, country, handleCountry }) {
     }
 
     return (
-        //Search and suggest country    ***WIP and need to fix display MenuItem
+        //Search and suggest country
         <FormControl variant="filled" fullWidth sx={{ mb: 2, minWidth: 250 }}>
             <TextField
                 id="search-country"
@@ -38,28 +39,13 @@ function SelectCountry({ countries, country, handleCountry }) {
                 label="Search Country"
                 variant='filled'
             />
-            {/* <Button variant='contained' onClick={() => handleCountry(search)} sx={{ mt: 0 }}>Search</Button> */}
-            {filteredSearch && filteredSearch.map((country, index) =>
-                <MenuItem key={index} value={country} onClick={() => clickFilteredSearch(country)}>
-                    {country}
-                </MenuItem>
-            )}
-
-            {/* <InputLabel id="select-country">Select Country</InputLabel>
-            <Select
-                labelId='select-country'
-                id="select-country"
-                value={country ? country : ''}
-                onChange={handleCountry}
-                label="Select Country"
-                variant='filled'
-            >
-                {countries.length > 0 && countries.map((item, index) =>
-                    <MenuItem key={index} value={item} >
-                        {item}
+            <Paper sx={{ position: 'absolute', top: 56, maxHeight: 300, minWidth: 250, overflow: 'auto' }}>
+                {filteredSearch && filteredSearch.map((country, index) =>
+                    <MenuItem key={index} value={country} onClick={() => clickFilteredSearch(country)}>
+                        {country}
                     </MenuItem>
                 )}
-            </Select> */}
+            </Paper>
         </FormControl>
     )
 }

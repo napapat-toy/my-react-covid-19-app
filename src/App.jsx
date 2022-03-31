@@ -36,7 +36,7 @@ function App() {
       <Appbar />
       <Container maxWidth="xl">
         <CountrySumDashboard />
-        <SelectCountry countries={getData} handleCountry={handleCountry} country={country} />
+        <SelectCountry countries={getData} handleCountry={handleCountry} />
         {country.length > 0 && <CountryDetailTables countries={countries} handleDelete={handleDelete} />}
       </Container>
     </Box >

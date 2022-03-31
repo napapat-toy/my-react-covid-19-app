@@ -7,7 +7,7 @@ function Appbar() {
             <AppBar position="static">
                 <Toolbar>
                     <Typography
-                        variant="h6"
+                        variant="h4"
                         noWrap
                         component="div"
                     >

@@ -30,14 +30,21 @@ function CountryAllSum() {
     return (
         <Card sx={{ maxWidth: 600, minWidth: 200, m: 2, p: 1, mx: 'auto' }} elevation={3}>
             <CardContent>
-                <Typography variant='h5'>Total Population : {totalPopulation.toLocaleString('en-US')}</Typography>
-                <Typography variant='h5'>Total Cases : {totalCases.toLocaleString('en-US')}</Typography>
-                <Typography variant='h5'>Total Tests : {totalTests.toLocaleString('en-US')}</Typography>
-                <Typography variant='h5'>Total Active : {totalActive.toLocaleString('en-US')}</Typography>
-                <Typography variant='h5'>Total Recover : {totalRecover.toLocaleString('en-US')}</Typography>
-                <Typography variant='h5'>Total Deaths : {totalDeaths.toLocaleString('en-US')}</Typography>
-                <Typography variant='h5'>Updated Date : {dateFormat}</Typography>
-                <Typography variant='h5'>Updated Time(UTC+7) : {timeFormat}</Typography>
+                {data.length > 0 ? (
+                    <>
+                        <Typography variant='h6'>Total Population : {totalPopulation.toLocaleString('en-US')}</Typography>
+                        <Typography variant='h6'>Total Cases : {totalCases.toLocaleString('en-US')}</Typography>
+                        <Typography variant='h6'>Total Tests : {totalTests.toLocaleString('en-US')}</Typography>
+                        <Typography variant='h6'>Total Active : {totalActive.toLocaleString('en-US')}</Typography>
+                        <Typography variant='h6'>Total Recover : {totalRecover.toLocaleString('en-US')}</Typography>
+                        <Typography variant='h6'>Total Deaths : {totalDeaths.toLocaleString('en-US')}</Typography>
+                        <Typography variant='h6'>Updated Date : {dateFormat}</Typography>
+                        <Typography variant='h6'>Updated Time(UTC+7) : {timeFormat}</Typography>
+                    </>
+                ) : (
+                    <Typography variant='h5'>Loading...</Typography>
+                )}
+
             </CardContent>
         </Card>
     )
